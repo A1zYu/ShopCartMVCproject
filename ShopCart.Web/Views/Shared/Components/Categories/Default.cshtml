@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Category>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <a class="nav-link text-dark" asp-action="Index" asp-controller="Products" asp-route-categorySlug="">All products</a>
+    </li>
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item">
+            <a class="nav-link text-dark" asp-action="Index" asp-controller="Products" asp-route-categorySlug="@item.Slug"> @item.Name</a>
+        </li>
+    }
+</ul>
